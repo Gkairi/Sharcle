@@ -3,16 +3,22 @@ package com.ca.dao;
 /**
  * Created by indka01 on 12/28/2016.
  */
-public class Registration {
+public class User {
 
     public String uuid;
+    public String emailId;
+    public String displayName;
+    public String commType;
+    public String imagePath;
+    public long userCreatedTime;
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Registration that = (Registration) o;
+        User that = (User) o;
 
         if (userCreatedTime != that.userCreatedTime) return false;
         if (!uuid.equals(that.uuid)) return false;
@@ -34,11 +40,6 @@ public class Registration {
         return result;
     }
 
-    public String emailId;
-    public String displayName;
-    public String commType;
-    public String imagePath;
-    public long userCreatedTime;
 
 
     public String getCommType() {

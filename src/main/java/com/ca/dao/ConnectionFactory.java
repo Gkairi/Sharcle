@@ -10,9 +10,9 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     //static reference to itself
     private static ConnectionFactory instance = new ConnectionFactory();
-    public static final String URL = "jdbc:mysql://localhost/jdbcdb";
-    public static final String USER = "YOUR_DATABASE_USERNAME";
-    public static final String PASSWORD = " YOUR_DATABASE_PASSWORD";
+    public static final String URL = "jdbc:mysql://10.131.68.223/SHARCLE";
+    public static final String USER = "root";
+    public static final String PASSWORD = " Root@123";
     public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
 
     //private constructor
