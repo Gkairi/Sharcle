@@ -1,10 +1,8 @@
 package com.ca.innovate.controller;
 
+import com.ca.innovate.controller.dummyData.SharcleData;
 import com.ca.innovate.controller.model.UserDetails;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by talma07 on 12/28/2016.
@@ -18,17 +16,15 @@ public class SharcleController {
 
 
     @RequestMapping(value = "user", method = RequestMethod.POST)
+    public UserDetails create(@RequestBody UserDetails userDetails) {
+        userDetails.setId(userDetails.getEmail().hashCode());
+        SharcleData.put(userDetails.getEmail().hashCode(), userDetails);
 
-    public UserDetails create(@RequestBody UserDetails user) {
-
-        return new UserDetails().dummy();
-
-
+        return userDetails;
     }
 
-    @RequestMapping(value = "user/allusers", method = RequestMethod.GET)
-
-    public UserDetails getUser() {
+    @RequestMapping(value = "user/{id}", method = RequestMethod.GET)
+    public UserDetails getUser(@PathVariable Long id) {
         UserDetails userDetails = new UserDetails();
         return userDetails.dummy();
 

@@ -5,8 +5,9 @@ import java.io.Serializable;
 /**
  * Created by talma07 on 12/28/2016.
  */
-public class UserDetails implements Serializable {
+public class UserDetails {
 
+    private Integer id;
     private String displayName;
     private String email;
     private String commercialUser;
@@ -45,4 +46,11 @@ public class UserDetails implements Serializable {
     }
 
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
