@@ -1,4 +1,4 @@
-package com.ca.com.ca.circle.exception;
+package com.ca.circle.exception;
 
 /**
  * Created by indka01 on 12/28/2016.
