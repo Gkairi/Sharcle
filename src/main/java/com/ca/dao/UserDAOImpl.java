@@ -4,15 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 /**
  * Created by indka01 on 12/28/2016.
  */
 public class UserDAOImpl implements UserDAO {
-    String DELETE = "DELETE FROM registration WHERE emailId=?";
+    String DELETE = "DELETE FROM Registration WHERE Email_iD=?";
 
-    String FINDBYEMAILID = "SELECT * FROM registration WHERE emailId=? ";
-    String INSERT = "INSERT INTO TABLE registration(UUID,EMAIL_ID,DISPLAY_NAME,COMM_USER,IMAGE,TIMESTAMP) VALUES(?,?,?,?,?,?)";
+    String FINDBYEMAILID = "SELECT * FROM Registration WHERE Email_iD=? ";
+    String INSERT = "INSERT INTO  Registration(UUID, Email_id, Display_name, Comm_user, Image, Time_stamp) VALUES(?,?,?,?,?,?)";
 
     public boolean save(User user) {
         Connection conn = null;
@@ -58,14 +59,13 @@ public class UserDAOImpl implements UserDAO {
 
             if (rs.next()) {
                 User user = new User();
-                user.setEmailId(rs.getString("emailid"));
-                user.setCommType(rs.getString("commuser"));
-                user.setDisplayName(rs.getString("displayname"));
+                user.setEmailId(rs.getString("Email_iD"));
+                user.setCommType(rs.getString("Comm_user"));
+                user.setDisplayName(rs.getString("Display_name"));
                 user.setUuid(rs.getString("uuid"));
                 user.setUserCreatedTime(
-                        rs.getLong("time_stamp")
+                        rs.getString("time_stamp")
                 );
-
                 return user;
             } else {
                 return null;
@@ -101,5 +101,24 @@ public class UserDAOImpl implements UserDAO {
             DBUtils.close(stmt);
             DBUtils.close(conn);
         }
+    }
+
+
+    public static void main(String args[])
+    {
+        UserDAO d = new UserDAOImpl();
+        //d.findByEmailID("abc@gmail.com");
+
+        User s = new User();
+        s.setCommType("false");
+        s.setDisplayName("asdf");
+        s.setEmailId("1@gmail.com");
+        s.setImagePath("asdf");
+        s.setUserCreatedTime(System.currentTimeMillis()+"");
+        s.setUuid(UUID.randomUUID()+"");
+        //d.save(s);
+
+        d.delete(s);
+
     }
 }

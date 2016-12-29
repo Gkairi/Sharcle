@@ -10,10 +10,12 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     //static reference to itself
     private static ConnectionFactory instance = new ConnectionFactory();
-    public static final String URL = "jdbc:mysql://10.131.68.223/SHARCLE";
-    public static final String USER = "root";
-    public static final String PASSWORD = " Root@123";
+    public static final String URL = "jdbc:mysql://patgo02-I188008/SHARCLE?user=root&password=Root@123";
+   // public static final String USER = "root";
+    //public static final String PASSWORD = " Root@123";
     public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
+
+    private static Connection connection = null;
 
     //private constructor
     private ConnectionFactory() {
@@ -25,10 +27,12 @@ public class ConnectionFactory {
     }
 
     private Connection createConnection() {
-        Connection connection = null;
+
+
         try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            connection = DriverManager.getConnection(URL/*, USER, PASSWORD*/);
         } catch (SQLException e) {
+            e.printStackTrace();
             System.out.println("ERROR: Unable to Connect to Database.");
         }
         return connection;

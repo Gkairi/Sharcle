@@ -9,8 +9,8 @@ public class User {
     public String emailId;
     public String displayName;
     public String commType;
-    public String imagePath;
-    public long userCreatedTime;
+    public String imagePath ="a";
+    public String userCreatedTime;
 
 
     @Override
@@ -35,8 +35,8 @@ public class User {
         result = 31 * result + emailId.hashCode();
         result = 31 * result + displayName.hashCode();
         result = 31 * result + commType.hashCode();
-        result = 31 * result + imagePath.hashCode();
-        result = 31 * result + (int) (userCreatedTime ^ (userCreatedTime >>> 32));
+        //result = 31 * result + imagePath.hashCode();
+     //   result = 31 * result + (int) (userCreatedTime ^ (userCreatedTime >>> 32));
         return result;
     }
 
@@ -82,11 +82,11 @@ public class User {
         this.imagePath = imagePath;
     }
 
-    public long getUserCreatedTime() {
+    public String getUserCreatedTime() {
         return userCreatedTime;
     }
 
-    public void setUserCreatedTime(long userCreatedTime) {
+    public void setUserCreatedTime(String userCreatedTime) {
         this.userCreatedTime = userCreatedTime;
     }
 
