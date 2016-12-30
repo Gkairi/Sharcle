@@ -1,6 +1,7 @@
 package com.ca.services;
 
 import com.ca.dao.Chat;
+import com.ca.dao.ChatDetails;
 
 import java.util.List;
 
@@ -9,6 +10,6 @@ import java.util.List;
  */
 public interface ChatService {
 
-    public List<Chat> getChatHistory(String groupId);
+    public List<ChatDetails> getChatHistory(String groupId);
     public  boolean saveChat(Chat c);
 }

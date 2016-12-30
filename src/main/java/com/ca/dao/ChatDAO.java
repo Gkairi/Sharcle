@@ -8,5 +8,5 @@ import java.util.List;
 public interface ChatDAO {
 
     public boolean save(Chat chat);
-    public List<Chat> getChatLastOneHour(String groupId);
+    public List<ChatDetails> getChatLastOneHour(String groupId);
 }

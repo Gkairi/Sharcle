@@ -1,6 +1,7 @@
 package com.ca.innovate.controller;
 
 import com.ca.dao.Chat;
+import com.ca.dao.ChatDetails;
 import com.ca.dao.Group;
 import com.ca.dao.User;
 import com.ca.innovate.controller.dummyData.SharcleData;
@@ -80,7 +81,7 @@ public class SharcleController {
     }
 
     @RequestMapping(value = "groups/{groupId}/chats", method = RequestMethod.GET)
-    public List<Chat> getGroupChat(@PathVariable("groupId") String groupId) {
+    public List<ChatDetails> getGroupChat(@PathVariable("groupId") String groupId) {
         ChatService cs =ServiceFactory.getChatService();
         return cs.getChatHistory(groupId);
     }
