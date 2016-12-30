@@ -2,9 +2,12 @@ package com.ca.innovate.controller;
 
 import com.ca.dao.Chat;
 import com.ca.dao.Group;
+import com.ca.dao.User;
 import com.ca.innovate.controller.dummyData.SharcleData;
 import com.ca.innovate.controller.model.GroupDetails;
 import com.ca.innovate.controller.model.UserDetails;
+import com.ca.services.RegistrationService;
+import com.ca.services.ServiceFactory;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +16,7 @@ import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by talma07 on 12/28/2016.
@@ -26,15 +30,22 @@ public class SharcleController {
 
 
     @RequestMapping(value = "user", method = RequestMethod.GET)
-    public UserDetails create(@RequestParam("displayName") String displayname, @RequestParam("email") String email,
+    public User create(@RequestParam("displayName") String displayname, @RequestParam("email") String email,
                               @RequestParam("commercialUser") String commercialUser) {
-        UserDetails userDetails = new UserDetails();
-        userDetails.setDisplayName(displayname);
-        userDetails.setCommercialUser(commercialUser);
-        userDetails.setEmail(email);
-        userDetails.setId(email.hashCode());
 
-        return userDetails;
+
+        RegistrationService regService = ServiceFactory.getRegistrationService();
+
+        User user = new User();
+        user.setDisplayName(displayname);
+        user.setCommType(commercialUser);
+        user.setEmailId(email);
+        user.setImagePath("imagePath");
+        user.setUserCreatedTime(System.currentTimeMillis()+"");
+        user.setUuid(UUID.randomUUID()+"");
+
+        User regUser = regService.registerUser(user);
+        return regUser;
     }
 
     @RequestMapping(value = "user/{id}", method = RequestMethod.GET)
