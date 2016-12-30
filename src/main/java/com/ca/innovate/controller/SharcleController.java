@@ -79,8 +79,8 @@ public class SharcleController {
         return cs.saveChat(c);
     }
 
-    @RequestMapping(value = "groups/{groupId}", method = RequestMethod.GET)
-    public List<Chat> getGroupChat(@PathParam("groupId") String groupId) {
+    @RequestMapping(value = "groups/{groupId}/chats", method = RequestMethod.GET)
+    public List<Chat> getGroupChat(@PathVariable("groupId") String groupId) {
         ChatService cs =ServiceFactory.getChatService();
         return cs.getChatHistory(groupId);
     }

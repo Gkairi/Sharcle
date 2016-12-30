@@ -22,8 +22,9 @@ public class ChatDAOImpl implements ChatDAO {
 
     public String SAVE = "INSERT INTO Chat (UUID,Group_id,Chat_text,User_Id,Time_stamp)\n" +
             "VALUES (?,?,?,?,?);";
-    public String GETCHATS ="SELECT UUID, Group_id, Chat_text, User_Id, Time_stamp \n" +
-            "FROM Chat where Group_id =? order by Time_stamp";
+    /*public String GETCHATS ="SELECT UUID, Group_id, Chat_text, User_Id, Time_stamp \n" +
+            "FROM Chat where Group_id =? order by Time_stamp";*/
+    public String GETCHATS ="select email_id,display_name,Image,chat_text from Chat ,Registration where Chat.user_id=Registration.email_id and Group_id =? order by Time_stamp desc";
     @Override
     public boolean save(Chat chat) {
         Connection conn = null;
