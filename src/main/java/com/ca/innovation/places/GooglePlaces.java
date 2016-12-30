@@ -456,7 +456,8 @@ public class GooglePlaces implements GooglePlacesInterface {
 
     public static void main1(String args[])
     {
-         String KEY = "AIzaSyAUjkefu1QPuxCUm_oqgTfMno9HTWrKZng";
+         //String KEY = "AIzaSyAUjkefu1QPuxCUm_oqgTfMno9HTWrKZng";
+String KEY  ="AIzaSyDEzR7s9X4I09v_Vc_pydD7SfaAeV2aA0M";
         GooglePlaces google = null;
         try {
             /*InputStream in = GooglePlacesTest.class.getResourceAsStream("/" + API_KEY_FILE_NAME);

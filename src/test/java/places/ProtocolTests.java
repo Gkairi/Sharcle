@@ -2,6 +2,7 @@ package places;
 
 import com.ca.innovation.places.*;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -13,12 +14,14 @@ import static org.junit.Assert.fail;
  *
  * https://developers.google.com/places/web-service/search
  */
+//@Ignore
 public class ProtocolTests {
     private static final String API_KEY_FILE_NAME = "places_api.key";
     private static final String UVM_NAME = "University of Vermont";
     private static final double UVM_LAT = 44.477321;
     private static final double UVM_LNG = -73.197292;
-    private static final String KEY = "AIzaSyAUjkefu1QPuxCUm_oqgTfMno9HTWrKZng";
+   // private static final String KEY = "AIzaSyAUjkefu1QPuxCUm_oqgTfMno9HTWrKZng";
+    private static final String KEY ="AIzaSyDEzR7s9X4I09v_Vc_pydD7SfaAeV2aA0M";
     private GooglePlaces google;
 
     @Before

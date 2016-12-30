@@ -17,7 +17,8 @@ public class GroupServiceImpl implements GroupService {
     @Override
     public List<Group> getGroupList(String latitude, String longitude) {
 
-        String KEY = "AIzaSyAUjkefu1QPuxCUm_oqgTfMno9HTWrKZng";
+        //String KEY = "AIzaSyAUjkefu1QPuxCUm_oqgTfMno9HTWrKZng";
+        String KEY = "AIzaSyDEzR7s9X4I09v_Vc_pydD7SfaAeV2aA0M";
         GooglePlaces google = null;
         try {
 
