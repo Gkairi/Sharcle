@@ -22,8 +22,9 @@ public class ChatDAOImpl implements ChatDAO {
 
     public String SAVE = "INSERT INTO Chat (UUID,Group_id,Chat_text,User_Id,Time_stamp)\n" +
             "VALUES (?,?,?,?,?);";
-    public String GETCHATS ="SELECT UUID, Group_id, Chat_text, User_Id, Time_stamp \n" +
-            "FROM Chat where Group_id =? order by Time_stamp";
+    /*public String GETCHATS ="SELECT UUID, Group_id, Chat_text, User_Id, Time_stamp \n" +
+            "FROM Chat where Group_id =? order by Time_stamp";*/
+    public String GETCHATS ="select email_id,display_name,Image,chat_text,user_id,Chat.Time_Stamp ,Chat.UUID ,Chat.Group_id from Chat ,Registration where Chat.user_id=Registration.email_id and Group_id =? order by Chat.Time_stamp desc";
     @Override
     public boolean save(Chat chat) {
         Connection conn = null;
@@ -55,9 +56,9 @@ public class ChatDAOImpl implements ChatDAO {
     }
 
     @Override
-    public List<Chat> getChatLastOneHour(String groupId) {
+    public List<ChatDetails> getChatLastOneHour(String groupId) {
 
-        List<Chat> chatList = new ArrayList<>();
+        List<ChatDetails> chatList = new ArrayList<>();
         Connection conn = null;
         PreparedStatement stmt = null;
 
@@ -69,12 +70,13 @@ public class ChatDAOImpl implements ChatDAO {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                Chat chat = new Chat();
+                ChatDetails chat = new ChatDetails();
                 chat.setUuid(rs.getString("UUID"));
                 chat.setGroupId(rs.getString("Group_id"));
                 chat.setChatText(rs.getString("Chat_text"));
                 chat.setUserId(rs.getString("User_Id"));
                 chat.setTimeStamp(rs.getString("Time_stamp"));
+                chat.setUserDisplayName(rs.getString("display_name"));
                 System.out.println(chat);
                 chatList.add(chat);
             }

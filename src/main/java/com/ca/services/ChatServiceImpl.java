@@ -3,6 +3,7 @@ package com.ca.services;
 import com.ca.dao.Chat;
 import com.ca.dao.ChatDAO;
 import com.ca.dao.ChatDAOImpl;
+import com.ca.dao.ChatDetails;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
 public class ChatServiceImpl implements ChatService {
 
     @Override
-    public List<Chat> getChatHistory(String groupId) {
+    public List<ChatDetails> getChatHistory(String groupId) {
 
         ChatDAO chatDao = new ChatDAOImpl();
         return chatDao.getChatLastOneHour(groupId);
