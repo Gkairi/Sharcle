@@ -27,7 +27,7 @@ public class GroupServiceImpl implements GroupService {
             e.printStackTrace();
         }
         //google.getPlacesByQuery(TEST_PLACE_NAME, GooglePlacesInterface.MAXIMUM_RESULTS), TEST_PLACE_NAME)
-        List<Place> nearByPlaces = google.getNearbyPlaces(17.4254, 78.3372, 200);
+        List<Place> nearByPlaces = google.getNearbyPlaces(Double.parseDouble(latitude),Double.parseDouble(longitude), 200);
         List<Group> glist = new ArrayList<>();
 
         for (Place place : nearByPlaces) {

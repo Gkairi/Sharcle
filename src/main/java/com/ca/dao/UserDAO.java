@@ -7,5 +7,6 @@ public interface UserDAO {
 
     public boolean save(User account);
     public User findByEmailID(String emailId);
+    public User findByUUID(String uuid);
     public boolean delete(User account);
 }

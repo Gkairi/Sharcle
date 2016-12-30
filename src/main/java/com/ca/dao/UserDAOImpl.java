@@ -13,6 +13,7 @@ public class UserDAOImpl implements UserDAO {
     String DELETE = "DELETE FROM Registration WHERE Email_iD=?";
 
     String FINDBYEMAILID = "SELECT * FROM Registration WHERE Email_iD=? ";
+    String FINDBYUUID="SELECT * FROM Registration WHERE uuid=? ";
     String INSERT = "INSERT INTO  Registration(UUID, Email_id, Display_name, Comm_user, Image, Time_stamp) VALUES(?,?,?,?,?,?)";
 
     public boolean save(User user) {
@@ -54,6 +55,40 @@ public class UserDAOImpl implements UserDAO {
             conn = ConnectionFactory.getConnection();
             stmt = conn.prepareStatement(FINDBYEMAILID);
             stmt.setString(1, emailId);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                User user = new User();
+                user.setEmailId(rs.getString("Email_iD"));
+                user.setCommType(rs.getString("Comm_user"));
+                user.setDisplayName(rs.getString("Display_name"));
+                user.setUuid(rs.getString("uuid"));
+                user.setUserCreatedTime(
+                        rs.getString("time_stamp")
+                );
+                return user;
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            // e.printStackTrace();
+            throw new RuntimeException(e);
+        } finally {
+            DBUtils.close(stmt);
+            DBUtils.close(conn);
+        }
+    }
+
+    @Override
+    public User findByUUID(String uuid) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = ConnectionFactory.getConnection();
+            stmt = conn.prepareStatement(FINDBYUUID);
+            stmt.setString(1, uuid);
 
             ResultSet rs = stmt.executeQuery();
 

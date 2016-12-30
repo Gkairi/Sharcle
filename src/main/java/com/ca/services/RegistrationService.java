@@ -8,4 +8,6 @@ import com.ca.dao.User;
 public interface RegistrationService {
 
     public User registerUser(User user);
+    public User findUser(String emailId);
+    public User findUserByUUID(String uuid);
 }

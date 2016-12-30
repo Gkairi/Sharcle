@@ -25,6 +25,18 @@ public class RegistrationServiceImpl implements RegistrationService {
         return newUser;
     }
 
+    @Override
+    public User findUser(String emailId)
+    {
+        UserDAO userDao = new UserDAOImpl();
+        return userDao.findByEmailID(emailId);
+    }
+
+    @Override
+    public User findUserByUUID(String uuid) {
+        UserDAO userDao = new UserDAOImpl();
+        return userDao.findByUUID(uuid);
+    }
 
     public static void main(String[] args)
     {
