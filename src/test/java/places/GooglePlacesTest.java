@@ -2,6 +2,7 @@ package places;
 
 import com.ca.innovation.places.*;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -9,6 +10,7 @@ import java.util.List;
 
 import static org.junit.Assert.fail;
 
+@Ignore
 public class GooglePlacesTest {
     private static final String API_KEY_FILE_NAME = "places_api.key";
     private static final String TEST_PLACE_NAME = "University of Vermont";
