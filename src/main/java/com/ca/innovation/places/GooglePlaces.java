@@ -454,4 +454,30 @@ public class GooglePlaces implements GooglePlacesInterface {
         }
     }
 
+    public static void main(String args[])
+    {
+         String KEY = "AIzaSyAUjkefu1QPuxCUm_oqgTfMno9HTWrKZng";
+        GooglePlaces google = null;
+        try {
+            /*InputStream in = GooglePlacesTest.class.getResourceAsStream("/" + API_KEY_FILE_NAME);
+            if (in == null)
+                throw new RuntimeException("API key not found.");*/
+            google = new GooglePlaces(KEY);
+            google.setDebugModeEnabled(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //google.getPlacesByQuery(TEST_PLACE_NAME, GooglePlacesInterface.MAXIMUM_RESULTS), TEST_PLACE_NAME)
+        List<Place> nearByPlaces = google.getNearbyPlaces(17.4254,78.3372,200);
+        for(Place place:nearByPlaces)
+        {
+            //place.getVicinity();
+            System.out.println("######################");
+            System.out.println(place.getPlaceId());
+            System.out.println(place.getVicinity());
+            System.out.println("######################");
+        }
+      //  google.get
+    }
+
 }
