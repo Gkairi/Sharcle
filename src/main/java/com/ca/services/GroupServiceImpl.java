@@ -28,7 +28,7 @@ public class GroupServiceImpl implements GroupService {
             e.printStackTrace();
         }
         //google.getPlacesByQuery(TEST_PLACE_NAME, GooglePlacesInterface.MAXIMUM_RESULTS), TEST_PLACE_NAME)
-        List<Place> nearByPlaces = google.getNearbyPlaces(Double.parseDouble(latitude),Double.parseDouble(longitude), 200);
+        List<Place> nearByPlaces = google.getNearbyPlaces(Double.parseDouble(longitude),Double.parseDouble(latitude), 200);
         List<Group> glist = new ArrayList<>();
 
         for (Place place : nearByPlaces) {
@@ -38,12 +38,13 @@ public class GroupServiceImpl implements GroupService {
                 Group newGrp = new Group();
                 newGrp.setGpsLatitude(place.getLatitude() + "");
                 newGrp.setGpsLongitude(place.getLongitude() + "");
-                newGrp.setGroupAddress(place.getAddress());
+                newGrp.setGroupAddress(place.getVicinity());
                 newGrp.setGroupId(place.getPlaceId());
                 newGrp.setTimeStamp(System.currentTimeMillis() + "");
                 newGrp.setType(place.getTypes().get(0));
                 newGrp.setUuid(UUID.randomUUID() + "");
                 newGrp.setGroupName(place.getName());
+             //   newGrp.setGroupAddress(place.get);
                 if (grpDao.save(newGrp)) {
                     glist.add(newGrp);
                 }
