@@ -1,9 +1,5 @@
 package com.ca.innovate.controller.model;
 
-import com.oracle.webservices.internal.api.databinding.Databinding;
-
-import java.io.Serializable;
-
 /**
  * Created by talma07 on 12/28/2016.
  */
