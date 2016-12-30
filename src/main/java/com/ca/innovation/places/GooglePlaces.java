@@ -454,7 +454,7 @@ public class GooglePlaces implements GooglePlacesInterface {
         }
     }
 
-    public static void main(String args[])
+    public static void main1(String args[])
     {
          String KEY = "AIzaSyAUjkefu1QPuxCUm_oqgTfMno9HTWrKZng";
         GooglePlaces google = null;

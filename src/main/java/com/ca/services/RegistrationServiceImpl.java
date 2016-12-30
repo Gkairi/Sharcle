@@ -38,7 +38,7 @@ public class RegistrationServiceImpl implements RegistrationService {
         return userDao.findByUUID(uuid);
     }
 
-    public static void main(String[] args)
+    public static void main1(String[] args)
     {
         User s = new User();
         s.setCommType("false");

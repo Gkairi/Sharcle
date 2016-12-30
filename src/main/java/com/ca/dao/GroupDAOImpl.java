@@ -125,7 +125,7 @@ Type varchar(30),
         }
     }
 
-    public static void main(String args[])
+    public static void main1(String args[])
     {
         Group g = new Group();
         g.setGpsLatitude("1");
