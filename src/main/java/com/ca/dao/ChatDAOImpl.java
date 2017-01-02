@@ -65,6 +65,8 @@ public class ChatDAOImpl implements ChatDAO {
         Connection conn = null;
         PreparedStatement stmt = null;
 
+        System.out.println("$$$$$$$$$$$$ getChatLastOneHour called with GroupId"+groupId );
+
         try {
             conn = ConnectionFactory.getConnection();
             stmt = conn.prepareStatement(GETCHATS);
