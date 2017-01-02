@@ -86,8 +86,8 @@ public class ChatDAOImpl implements ChatDAO {
                 chatList.add(chat);
             }
         } catch (SQLException e) {
-            // e.printStackTrace();
-            throw new RuntimeException(e);
+            e.printStackTrace();
+//            throw new RuntimeException(e);
         } finally {
             DBUtils.close(stmt);
             DBUtils.close(conn);
