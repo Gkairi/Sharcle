@@ -51,7 +51,7 @@ public class GroupServiceImpl implements GroupService {
         }
         List<Group> glist = new ArrayList<>();
 
-        for (Place place : nearByPlaces) {
+        for (Place place : sortedPlaces) {
             GroupDAO grpDao = new GroupDAOImpl();
             Group g = grpDao.findByGroupId(place.getPlaceId());
             if (g == null) {
@@ -79,6 +79,10 @@ public class GroupServiceImpl implements GroupService {
             System.out.println(group.getGroupId());
             System.out.println(group.getGroupName());
             System.out.println("######################");
+        }
+        if(glist.size()>5)
+        {
+            glist = glist.subList(0,5);
         }
         return glist;
     }

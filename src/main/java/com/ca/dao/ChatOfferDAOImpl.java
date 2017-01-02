@@ -17,8 +17,8 @@ public class ChatOfferDAOImpl implements ChatOfferDAO {
 
     private String INSERT = "INSERT INTO ChatOffer (UUID,Group_id,Offer_id,Offer_type,Description,Offer_Starttime,Offer_endtime,User_Id,Offer_image)\n" +
             "VALUES (?,?,?,?,?,?,?,?,?)";
-    private String SELECT = "SELECT UUID, Group_id, Offer_id, Offer_type, Description, Offer_Starttime, Offer_endtime, User_Id, Offer_image \n" +
-            "FROM SHARCLE.ChatOffer where group_id=? order by offer_starttime  limit 3";
+    private String SELECT = "SELECT UUID, Group_id, Offer_id, Offer_type, Description, Offer_Starttime, Offer_endtime, User_Id,display_name, Offer_image \n" +
+            "FROM SHARCLE.ChatOffer where group_id=? order by offer_starttime  limit 5";
 
     private  String updateDisplay= "update ChatOffer set display_name= (select display_name FROM Registration where Registration.Email_id = ChatOffer.User_Id limit 1) where ChatOffer.User_Id =?";
     @Override
@@ -87,7 +87,7 @@ FROM SHARCLE.ChatOffer;
                 chatOffer.setOfferEndTime(rs.getString("Offer_endtime"));
                 chatOffer.setUserId(rs.getString("User_Id"));
                 chatOffer.setOfferImgPath(rs.getString("Offer_image"));
-
+                chatOffer.setDisplayName(rs.getString("display_name"));
                 System.out.println(chatOffer);
                 chatOfferList.add(chatOffer);
             }
