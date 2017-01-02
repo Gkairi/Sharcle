@@ -50,7 +50,7 @@ public class ChatOfferDAOImpl implements ChatOfferDAO {
             }
 
         } catch (SQLException e) {
-            // e.printStackTrace();
+             e.printStackTrace();
             throw new RuntimeException(e);
         } finally {
             DBUtils.close(stmt);
@@ -87,7 +87,7 @@ FROM SHARCLE.ChatOffer;
                 chatOffer.setOfferEndTime(rs.getString("Offer_endtime"));
                 chatOffer.setUserId(rs.getString("User_Id"));
                 chatOffer.setOfferImgPath(rs.getString("Offer_image"));
-                chatOffer.setDisplayName(rs.getString("display_name"));
+                chatOffer.setUserDisplayName(rs.getString("display_name"));
                 System.out.println(chatOffer);
                 chatOfferList.add(chatOffer);
             }
@@ -118,7 +118,7 @@ FROM SHARCLE.ChatOffer;
             }
             return true;
         } catch (SQLException e) {
-            // e.printStackTrace();
+             e.printStackTrace();
             throw new RuntimeException(e);
         } finally {
             DBUtils.close(stmt);

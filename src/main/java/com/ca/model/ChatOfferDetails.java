@@ -5,11 +5,11 @@ package com.ca.model;
  */
 public class ChatOfferDetails extends ChatOffer {
 
-    public String getDisplayName() {
+    public String getUserDisplayName() {
         return userDisplayName;
     }
 
-    public void setDisplayName(String displayName) {
+    public void setUserDisplayName(String displayName) {
         this.userDisplayName = displayName;
     }
 
