@@ -1,6 +1,6 @@
 package com.ca.services;
 
-import com.ca.dao.Group;
+import com.ca.model.Group;
 
 import java.util.List;
 

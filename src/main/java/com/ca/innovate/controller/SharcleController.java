@@ -1,24 +1,16 @@
 package com.ca.innovate.controller;
 
-import com.ca.dao.Chat;
-import com.ca.dao.ChatDetails;
-import com.ca.dao.Group;
-import com.ca.dao.User;
-import com.ca.innovate.controller.dummyData.SharcleData;
-import com.ca.innovate.controller.model.GroupDetails;
-import com.ca.innovate.controller.model.UserDetails;
+import com.ca.model.Chat;
+import com.ca.model.ChatDetails;
+import com.ca.model.Group;
+import com.ca.model.User;
 import com.ca.services.ChatService;
 import com.ca.services.GroupService;
 import com.ca.services.RegistrationService;
 import com.ca.services.ServiceFactory;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import org.springframework.web.bind.annotation.*;
 
-import javax.print.DocFlavor;
-import javax.websocket.server.PathParam;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 /**

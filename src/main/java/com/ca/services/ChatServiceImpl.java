@@ -1,9 +1,9 @@
 package com.ca.services;
 
-import com.ca.dao.Chat;
+import com.ca.model.Chat;
 import com.ca.dao.ChatDAO;
 import com.ca.dao.ChatDAOImpl;
-import com.ca.dao.ChatDetails;
+import com.ca.model.ChatDetails;
 
 import java.util.List;
 

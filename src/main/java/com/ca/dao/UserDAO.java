@@ -1,5 +1,7 @@
 package com.ca.dao;
 
+import com.ca.model.User;
+
 /**
  * Created by indka01 on 12/28/2016.
  */

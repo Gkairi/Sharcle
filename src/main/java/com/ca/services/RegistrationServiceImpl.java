@@ -1,6 +1,6 @@
 package com.ca.services;
 
-import com.ca.dao.User;
+import com.ca.model.User;
 import com.ca.dao.UserDAO;
 import com.ca.dao.UserDAOImpl;
 

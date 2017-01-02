@@ -1,6 +1,6 @@
 package com.ca.services;
 
-import com.ca.dao.Group;
+import com.ca.model.Group;
 import com.ca.dao.GroupDAO;
 import com.ca.dao.GroupDAOImpl;
 import com.ca.innovation.places.GooglePlaces;

@@ -1,8 +1,7 @@
 package com.ca.innovate.controller.model;
 
-import com.ca.dao.Chat;
+import com.ca.model.Chat;
 
-import javax.print.DocFlavor;
 import java.util.List;
 
 /**

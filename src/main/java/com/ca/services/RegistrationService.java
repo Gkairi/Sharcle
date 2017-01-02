@@ -1,6 +1,6 @@
 package com.ca.services;
 
-import com.ca.dao.User;
+import com.ca.model.User;
 
 /**
  * Created by indka01 on 12/29/2016.

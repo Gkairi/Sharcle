@@ -1,5 +1,8 @@
 package com.ca.dao;
 
+import com.ca.model.Chat;
+import com.ca.model.ChatDetails;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

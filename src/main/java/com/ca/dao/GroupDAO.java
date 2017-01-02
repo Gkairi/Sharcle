@@ -1,5 +1,7 @@
 package com.ca.dao;
 
+import com.ca.model.Group;
+
 /**
  * Created by indka01 on 12/29/2016.
  */

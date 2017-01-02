@@ -1,6 +1,6 @@
 package com.ca.services;
 
-import com.ca.dao.ChatOffer;
+import com.ca.model.ChatOffer;
 import com.ca.dao.ChatOfferDAO;
 import com.ca.dao.ChatOfferDAOImpl;
 

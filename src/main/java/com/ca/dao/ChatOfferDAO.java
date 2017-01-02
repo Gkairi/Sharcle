@@ -1,5 +1,7 @@
 package com.ca.dao;
 
+import com.ca.model.ChatOffer;
+
 import java.util.List;
 
 /**

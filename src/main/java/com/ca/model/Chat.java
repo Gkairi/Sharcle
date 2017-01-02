@@ -1,4 +1,4 @@
-package com.ca.dao;
+package com.ca.model;
 
 /**
  * Created by indka01 on 12/29/2016.

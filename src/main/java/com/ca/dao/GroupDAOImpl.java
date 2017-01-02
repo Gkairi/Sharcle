@@ -1,5 +1,7 @@
 package com.ca.dao;
 
+import com.ca.model.Group;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
