@@ -95,7 +95,7 @@ Type varchar(30),
                 return null;
             }
         } catch (SQLException e) {
-            // e.printStackTrace();
+             e.printStackTrace();
             throw new RuntimeException(e);
         } finally {
             DBUtils.close(stmt);

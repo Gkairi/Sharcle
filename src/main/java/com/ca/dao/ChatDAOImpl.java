@@ -27,7 +27,7 @@ public class ChatDAOImpl implements ChatDAO {
             "VALUES (?,?,?,?,?);";
     /*public String GETCHATS ="SELECT UUID, Group_id, Chat_text, User_Id, Time_stamp \n" +
             "FROM Chat where Group_id =? order by Time_stamp";*/
-    public String GETCHATS ="select email_id,display_name,Image,chat_text,user_id,Chat.Time_Stamp ,Chat.UUID ,Chat.Group_id from Chat ,Registration where Chat.user_id=Registration.email_id and Group_id =? order by Chat.Time_stamp desc ";
+    public String GETCHATS ="select email_id,display_name,Image,chat_text,user_id,Chat.Time_Stamp ,Chat.UUID ,Chat.Group_id from Chat ,Registration where Chat.user_id=Registration.email_id and Group_id =? order by Chat.Time_stamp ";
     @Override
     public boolean save(Chat chat) {
         Connection conn = null;
@@ -50,7 +50,7 @@ public class ChatDAOImpl implements ChatDAO {
             }
             return true;
         } catch (SQLException e) {
-            // e.printStackTrace();
+             e.printStackTrace();
             throw new RuntimeException(e);
         } finally {
             DBUtils.close(stmt);

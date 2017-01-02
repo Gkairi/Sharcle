@@ -132,7 +132,7 @@ public class UserDAOImpl implements UserDAO {
             }
             return true;
         } catch (SQLException e) {
-            // e.printStackTrace();
+             e.printStackTrace();
             throw new RuntimeException(e);
         } finally {
             DBUtils.close(stmt);
