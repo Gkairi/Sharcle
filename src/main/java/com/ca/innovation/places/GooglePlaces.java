@@ -218,7 +218,8 @@ public class GooglePlaces implements GooglePlacesInterface {
     public List<Place> getNearbyPlaces(double lat, double lng, double radius, int limit, Param... extraParams) {
         try {
             String uri = buildUrl(METHOD_NEARBY_SEARCH, String.format(Locale.ENGLISH, "key=%s&location=%s,%s&radius=%s",
-                    apiKey, String.valueOf(lat), String.valueOf(lng), String.valueOf(radius)), extraParams);
+                    apiKey,  String.valueOf(lng),String.valueOf(lat), String.valueOf(radius)), extraParams);
+            System.out.println("Google Palces URI %%%%%%%: "+uri);
             return getPlaces(uri, METHOD_NEARBY_SEARCH, limit);
         } catch (Exception e) {
             throw new GooglePlacesException(e);
