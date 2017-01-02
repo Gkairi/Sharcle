@@ -22,7 +22,7 @@ GPS_Longitude varchar(254),
 Time_stamp long,
 Type varchar(30),
    */
-    String DELETE = "DELETE FROM Groups WHERE Group_id=?";
+    String DELETE = "DELETE FROM Groups WHERE Group_id=? limit 3";
 
     String FINDBYGROUPID = "SELECT * FROM Groups WHERE Group_id=? ";
     String INSERT = "INSERT INTO  Groups(Group_id, Group_Name, Group_address, GPS_Latitude, GPS_Longitude, Time_stamp, Type ,UUID) VALUES(?,?,?,?,?,?,?,?)";

@@ -15,7 +15,7 @@ public class ChatOfferDAOImpl implements ChatOfferDAO {
     private String INSERT = "INSERT INTO ChatOffer (UUID,Group_id,Offer_id,Offer_type,Description,Offer_Starttime,Offer_endtime,User_Id,Offer_image)\n" +
             "VALUES (?,?,?,?,?,?,?,?,?)";
     private String SELECT = "SELECT UUID, Group_id, Offer_id, Offer_type, Description, Offer_Starttime, Offer_endtime, User_Id, Offer_image \n" +
-            "FROM SHARCLE.ChatOffer where group_id=? order by offer_starttime";
+            "FROM SHARCLE.ChatOffer where group_id=? order by offer_starttime desc limit 3";
     @Override
     public boolean save(ChatOffer chatOffer) {
 
