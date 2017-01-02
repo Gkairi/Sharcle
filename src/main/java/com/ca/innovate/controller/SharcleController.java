@@ -82,7 +82,7 @@ public class SharcleController {
     }
 
     @RequestMapping(value = "offers/chat/{groupId}", method = RequestMethod.GET)
-    public List<ChatOffer> getChatOffers(@PathVariable("groupId") String groupId) {
+    public List<ChatOfferDetails> getChatOffers(@PathVariable("groupId") String groupId) {
         ChatOfferService cs = ServiceFactory.getChatOfferService();
         return cs.getOffers(groupId);
     }

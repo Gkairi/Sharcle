@@ -1,6 +1,7 @@
 package com.ca.dao;
 
 import com.ca.model.ChatOffer;
+import com.ca.model.ChatOfferDetails;
 
 import java.util.List;
 
@@ -10,5 +11,5 @@ import java.util.List;
 public interface ChatOfferDAO {
 
     public boolean save(ChatOffer chatOffer);
-    public List<ChatOffer> getOffers(String groupId);
+    public List<ChatOfferDetails> getOffers(String groupId);
 }

@@ -29,6 +29,26 @@ public class GroupServiceImpl implements GroupService {
         }
         //google.getPlacesByQuery(TEST_PLACE_NAME, GooglePlacesInterface.MAXIMUM_RESULTS), TEST_PLACE_NAME)
         List<Place> nearByPlaces = google.getNearbyPlaces(Double.parseDouble(longitude),Double.parseDouble(latitude), 200);
+       List<Place> sortedPlaces = new ArrayList<>();
+
+        for(Place p :nearByPlaces)
+        {
+            /*p.getTypes().contains()*/
+           boolean isLocality = false;
+            List<String> typeList = p.getTypes();
+            for(String type:typeList)
+            {
+                if (type.contains(("locality")))
+                {
+                    isLocality = true;
+                    break;
+                }
+            }
+            if(! isLocality)
+            {
+                sortedPlaces.add(p);
+            }
+        }
         List<Group> glist = new ArrayList<>();
 
         for (Place place : nearByPlaces) {

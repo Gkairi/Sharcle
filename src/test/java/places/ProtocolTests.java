@@ -14,7 +14,7 @@ import static org.junit.Assert.fail;
  *
  * https://developers.google.com/places/web-service/search
  */
-//@Ignore
+@Ignore
 public class ProtocolTests {
     private static final String API_KEY_FILE_NAME = "places_api.key";
     private static final String UVM_NAME = "University of Vermont";

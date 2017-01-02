@@ -1,6 +1,7 @@
 package com.ca.services;
 
 import com.ca.model.ChatOffer;
+import com.ca.model.ChatOfferDetails;
 
 import java.util.List;
 
@@ -9,5 +10,5 @@ import java.util.List;
  */
 public interface ChatOfferService {
     public boolean saveOffer(ChatOffer chatOffer);
-    public List<ChatOffer> getOffers(String groupId);
+    public List<ChatOfferDetails> getOffers(String groupId);
 }

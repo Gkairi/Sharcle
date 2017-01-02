@@ -3,6 +3,7 @@ package com.ca.services;
 import com.ca.model.ChatOffer;
 import com.ca.dao.ChatOfferDAO;
 import com.ca.dao.ChatOfferDAOImpl;
+import com.ca.model.ChatOfferDetails;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class OfferServiceImpl implements ChatOfferService {
     }
 
     @Override
-    public List<ChatOffer> getOffers(String groupId) {
+    public List<ChatOfferDetails> getOffers(String groupId) {
         ChatOfferDAO chatDao = new ChatOfferDAOImpl();
         return chatDao.getOffers(groupId);
     }
