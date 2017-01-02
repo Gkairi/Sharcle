@@ -108,7 +108,7 @@ FROM SHARCLE.ChatOffer;
 
         try {
             conn = ConnectionFactory.getConnection();
-            stmt = conn.prepareStatement(SELECT);
+            stmt = conn.prepareStatement(updateDisplay);
             stmt.setString(1,user_Id);
 
             int ret = stmt.executeUpdate();
